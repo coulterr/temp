@@ -21,3 +21,4 @@ rover_grid_map.o: rover_grid_map.cc
 
 clean: 
 	rm -f *.o
+	rm rover_sim
