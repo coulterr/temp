@@ -9,6 +9,7 @@ int main()
 
 	state_rover rover(grid_map); 
 
+	//Takes turns until state_rover returns false (stop condition) 
 	while(rover.take_turn()){
 
 	}

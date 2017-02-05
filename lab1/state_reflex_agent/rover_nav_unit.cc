@@ -1,12 +1,19 @@
 #include "rover_nav_unit.h"
 
-
+/*
+*	Keeps track of where rover is located and performs move
+*	instructions. Also keeps track of which tiles have been 
+*	visited. 
+*/
 rover_nav_unit::rover_nav_unit(int row, int col)
 	:m_row(row), 
 	m_col(col)
 {
 }
 
+/*
+*	Performs move orders. (updates row and col)  
+*/
 void rover_nav_unit::move_to(std::string direction)
 {
 	m_visited.push_back(std::tuple<int, int>(m_row, m_col)); 
@@ -22,6 +29,10 @@ void rover_nav_unit::move_to(std::string direction)
 	}
 }
 
+/*
+*	Reports whether rover has been to the tile in the 
+*	given direction. 
+*/
 bool rover_nav_unit::has_been(std::string direction)
 {
 	int dest_row = m_row;
@@ -47,11 +58,18 @@ bool rover_nav_unit::has_been(std::string direction)
 	return false; 
 }
 
+/*
+*	Returns current row location of rover. 
+*/
 int rover_nav_unit::get_row()
 {
 	return m_row; 
 }
 
+
+/*
+*	Returns current column position of rover. 
+*/
 int rover_nav_unit::get_col()
 {
 	return m_col; 

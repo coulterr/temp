@@ -1,6 +1,4 @@
-default:  
-	g++ rover.cc rover_grid_map.cc -std=c++11
-rover_sim: rover_sim.o state_rover.o rover_sampler.o rover_camera.o rover_nav_unit.o rover_grid_map.o
+default: rover_sim.o state_rover.o rover_sampler.o rover_camera.o rover_nav_unit.o rover_grid_map.o
 	g++ -o rover_sim rover_sim.o state_rover.o rover_sampler.o rover_camera.o rover_nav_unit.o rover_grid_map.o
 
 rover_sim.o: rover_sim.cc 
